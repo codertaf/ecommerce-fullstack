@@ -1,13 +1,13 @@
 package com.erp.ecommerce.dto;
 
-
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.cache.spi.entry.StructuredCacheEntry;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Data
@@ -15,17 +15,15 @@ import java.time.LocalDateTime;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @NoArgsConstructor
 @AllArgsConstructor
-public class AdressDto {
+
+public class OrderItemDto {
 
     private Long id;
-
-    private String street;
-    private String city;
-    private String state;
-    private String zipCode;
-    private String country;
-
+    private int quantity;
+    private BigDecimal price;
+    private String status;
     private UserDto user;
+    private ProductDto product;
+    private LocalDateTime createAt;
 
-    private LocalDateTime createdAt = LocalDateTime.now();
 }

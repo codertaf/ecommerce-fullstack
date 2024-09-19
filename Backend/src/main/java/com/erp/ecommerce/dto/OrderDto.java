@@ -1,31 +1,30 @@
 package com.erp.ecommerce.dto;
 
-
-
+import com.erp.ecommerce.entity.OrderItem;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
+@Builder
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
-@NoArgsConstructor
 @AllArgsConstructor
-public class AdressDto {
+@NoArgsConstructor
+
+public class OrderDto {
 
     private Long id;
+    private BigDecimal totalPrice;
+    private LocalDateTime createAt;
+    private List<OrderItemDto> orderItemList;
 
-    private String street;
-    private String city;
-    private String state;
-    private String zipCode;
-    private String country;
 
-    private UserDto user;
-
-    private LocalDateTime createdAt = LocalDateTime.now();
 }
