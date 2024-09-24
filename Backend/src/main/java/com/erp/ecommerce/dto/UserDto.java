@@ -23,6 +23,6 @@ public class UserDto {
     private String password;
     private String role;
     private List<OrderItemDto> orderItemList;
-    private AdressDto adressDto;
+    private AdressDto adress;
 
 }

@@ -39,7 +39,7 @@ public class OrderItem {
     private Order order;
 
     @Column(name = "created_at")
-    private final LocalDateTime localDateTime = LocalDateTime.now();
+    private final LocalDateTime createdAt = LocalDateTime.now();
 
 
 }
